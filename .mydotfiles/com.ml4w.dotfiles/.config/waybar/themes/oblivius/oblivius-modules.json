@@ -1,0 +1,33 @@
+{
+  // Pulseaudio - 5% scroll, middle-click toggles 1% fine mode
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "  muted",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-scroll-up": "~/.config/hypr/scripts/oblivius-volume.sh up",
+    "on-scroll-down": "~/.config/hypr/scripts/oblivius-volume.sh down",
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/hypr/scripts/oblivius-volume.sh mute",
+    "on-click-middle": "~/.config/hypr/scripts/oblivius-volume.sh toggle-fine",
+    "tooltip-format": "Volume: {volume}%\nLeft: pavucontrol\nRight: mute\nMiddle: toggle 1%/5% mode\nScroll: adjust"
+  },
+
+  // Brightness control for DDC displays
+  "custom/brightness": {
+    "format": "󰖨",
+    "on-click": "~/.config/hypr/scripts/oblivius-brightness.sh",
+    "tooltip-format": "Display brightness (DDC)"
+  }
+}

@@ -1,0 +1,41 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-top": -10,
+    "margin-bottom": -18,
+    "margin-left": 0,
+    "margin-right": 0,
+    "spacing": 0,
+
+    // Load Modules (oblivius modules override defaults)
+    "include": [
+        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/waybar/modules.json",
+        "~/.config/waybar/themes/oblivius/oblivius-modules.json"
+    ],
+
+    // Modules Left
+    "modules-left": [
+        "hyprland/workspaces",
+        "wlr/taskbar"
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "clock"
+    ],
+
+    // Modules Right
+    "modules-right": [
+        "custom/updates",
+        "custom/brightness",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "group/hardware",
+        "group/tools",
+        "tray",
+        "custom/notification",
+        "custom/exit"
+    ]
+}
