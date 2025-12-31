@@ -1,0 +1,166 @@
+/*
+ * Oblivius Waybar Style
+ * Based on ml4w-glass with slim bar design
+ */
+
+* {
+    font-family: "Fira Sans Semibold", "Font Awesome 7 Free", "Font Awesome 7 Brands", FontAwesome, "Material Icons", Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background: alpha(@surface_dim, 0.85);
+}
+
+.modules-left {
+    padding: 0px 8px;
+}
+
+.modules-right {
+    padding: 0px 8px;
+}
+
+.modules-center {
+    padding: 0px 8px;
+}
+
+/* Module hover effect */
+label.module {
+    font-size: 14px;
+    padding: 4px 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+label.module:hover {
+    background: alpha(@primary, 0.3);
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 4px 0px;
+}
+
+#workspaces button {
+    border-radius: 6px;
+    padding: 0px 8px;
+    margin: 0px 2px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    background: @primary;
+    color: @on_primary;
+}
+
+#workspaces button:hover {
+    background: alpha(@primary, 0.5);
+}
+
+/* Tooltips */
+tooltip {
+    background-color: @surface;
+    border-radius: 8px;
+    border: 1px solid alpha(@primary, 0.5);
+    opacity: 0.95;
+}
+
+tooltip label {
+    color: @on_surface;
+}
+
+/* Taskbar */
+#taskbar {
+    padding: 4px 0px;
+}
+
+#taskbar button {
+    border-radius: 6px;
+    padding: 0px 6px;
+    margin: 0px 2px;
+    transition: all 0.2s ease;
+}
+
+#taskbar button:hover {
+    background: alpha(@primary, 0.3);
+}
+
+/* Clock */
+#clock {
+    padding: 0px 12px;
+}
+
+#clock:hover {
+    background: alpha(@primary, 0.2);
+    border-radius: 6px;
+}
+
+/* Common module hover */
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#custom-brightness,
+#custom-updates,
+#custom-notification,
+#custom-exit,
+#tray {
+    padding: 0px 8px;
+    margin: 4px 2px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover,
+#custom-brightness:hover,
+#custom-notification:hover,
+#custom-exit:hover {
+    background: alpha(@primary, 0.3);
+}
+
+/* Updates badges */
+#custom-updates.yellow {
+    border-radius: 6px;
+    padding: 0px 8px;
+    margin: 4px 2px;
+    background-color: @secondary;
+    color: @on_secondary;
+}
+
+#custom-updates.red {
+    border-radius: 6px;
+    padding: 0px 8px;
+    margin: 4px 2px;
+    background-color: @error;
+    color: @on_error;
+}
+
+/* Notification icon */
+#custom-notification {
+    font-size: 18px;
+    font-family: "Material Icons";
+}
+
+/* Tray */
+#tray {
+    padding: 0px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray menu {
+    background: @surface;
+    border-radius: 8px;
+    border: 1px solid alpha(@primary, 0.5);
+}
