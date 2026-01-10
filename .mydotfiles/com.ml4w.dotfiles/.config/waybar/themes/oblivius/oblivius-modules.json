@@ -1,4 +1,17 @@
 {
+  // Oblivius Updates - Interactive TUI package selector
+  "custom/updates#oblivius": {
+    "format": "  {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "interval": 1800,
+    "signal": 1,
+    "hide-empty-text": true,
+    "on-click": "~/.config/hypr/scripts/oblivius-installupdates.sh",
+    "tooltip-format": "Click to open package selector"
+  },
+
   // Pulseaudio - 5% scroll, middle-click toggles 1% fine mode
   "pulseaudio#oblivius": {
     "format": "{icon}  {volume}%",
