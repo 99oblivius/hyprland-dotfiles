@@ -400,15 +400,20 @@ class UpdaterTUI:
         print("Starting package updates...")
         print("=" * 60 + "\n")
 
-        # Update official + AUR packages (one by one for error tracking)
+        # Update official + AUR packages
         pacman_pkgs = official + aur
         if pacman_pkgs and self.aur_helper:
+            # Sync database first
+            print("\n[Syncing package database...]\n")
+            subprocess.run([self.aur_helper, "-Sy"], capture_output=True)
+
+            # Update each package
             total = len(pacman_pkgs)
             for i, pkg in enumerate(pacman_pkgs, 1):
                 source_label = "repo" if pkg.source == PackageSource.OFFICIAL else "AUR"
                 print(f"\n[{i}/{total}] Updating {pkg.name} ({source_label})...\n")
                 result = subprocess.run(
-                    [self.aur_helper, "-S", "--noconfirm", pkg.name],
+                    [self.aur_helper, "-S", "--needed", "--noconfirm", pkg.name],
                     capture_output=False,
                     text=True,
                     stderr=subprocess.PIPE
