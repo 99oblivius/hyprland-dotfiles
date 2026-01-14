@@ -12,3 +12,13 @@ find "$REPO_DIR/.mydotfiles" -type f | while read -r file; do
   ln -sf "$file" "$target"
   echo "Linked: $rel_path -> $file"
 done
+
+# Symlink .config files directly to ~/.config
+find "$REPO_DIR/.config" -type f | while read -r file; do
+  rel_path="${file#$REPO_DIR/}"
+  target="$TARGET_BASE/$rel_path"
+
+  mkdir -p "$(dirname "$target")"
+  ln -sf "$file" "$target"
+  echo "Linked: $rel_path -> $file"
+done
