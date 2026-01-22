@@ -36,14 +36,14 @@ if [ -n "$DELL_NAME" ]; then
     echo "monitor=$DELL_NAME,2560x1440@239.97,0x0,1,vrr,1" >> "$CONFIG_FILE"
 fi
 
-# AOC AG271QG - left
+# AOC AG271QG - left (no VRR - causes high power draw on secondary GPU)
 if [ -n "$AOC_271_NAME" ]; then
-    echo "monitor=$AOC_271_NAME,2560x1440@120,-2560x125,1,vrr,1" >> "$CONFIG_FILE"
+    echo "monitor=$AOC_271_NAME,2560x1440@120,-2560x125,1" >> "$CONFIG_FILE"
 fi
 
-# AOC AG241QG4 - top
+# AOC AG241QG4 - top (no VRR - causes high power draw on secondary GPU)
 if [ -n "$AOC_241_NAME" ]; then
-    echo "monitor=$AOC_241_NAME,2560x1440@120,0x-1440,1,vrr,1" >> "$CONFIG_FILE"
+    echo "monitor=$AOC_241_NAME,2560x1440@120,0x-1440,1" >> "$CONFIG_FILE"
 fi
 
 # HDMI monitor (if connected)
