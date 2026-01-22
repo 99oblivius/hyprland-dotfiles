@@ -10,7 +10,13 @@
 }
 
 window#waybar {
-    background: alpha(@surface_dim, 0.85);
+    background: transparent;
+}
+
+#waybar > box {
+    background: rgba(40, 40, 40, 0.45);
+    border-radius: 12px;
+    margin: 4px 8px 1px 8px;
 }
 
 .modules-left {
