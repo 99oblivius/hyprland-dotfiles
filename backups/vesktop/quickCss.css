@@ -1,0 +1,15 @@
+*:not([class*="-carouselModal"]):not([class*="-container"]) {
+    background-color: transparent;
+}
+
+.custom-theme-background {
+    --custom-theme-background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)) !important;
+    --custom-background-gradient-lowest-opacity: 0 !important;
+    --custom-background-gradient-lower-opacity: 0 !important;  /* header bars */
+    --custom-background-gradient-low-opacity: 0 !important;  /* search bars */
+    --custom-background-gradient-high-opacity: 20% !important;  /* lists */
+    --custom-background-gradient-higher-opacity: 0 !important;
+    --custom-background-gradient-highest-opacity: 20% !important;  /* profile and message */
+    --custom-background-gradient-opacity-chat: 0 !important;  /* chatbox */
+    --custom-background-gradient-opacity-app-frame: transparent !important;  /* frame */
+}
