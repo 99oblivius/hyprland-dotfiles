@@ -1,0 +1,78 @@
+[
+    {
+        "key": "general:gaps_workspaces",
+        "value": 0
+    },
+    {
+        "key": "general:gaps_in",
+        "value": 8.0
+    },
+    {
+        "key": "general:gaps_out",
+        "value": 10.0
+    },
+    {
+        "key": "general:border_size",
+        "value": 0
+    },
+    {
+        "key": "general:col.inactive_border",
+        "value": "0xff00363c"
+    },
+    {
+        "key": "general:col.active_border",
+        "value": "0xff81d3e0"
+    },
+    {
+        "key": "general:col.nogroup_border",
+        "value": "0xffffaaff"
+    },
+    {
+        "key": "general:col.nogroup_border_active",
+        "value": "0xffff00ff"
+    },
+    {
+        "key": "general:snap:enabled",
+        "value": "true"
+    },
+    {
+        "key": "general:snap:window_gap",
+        "value": 25
+    },
+    {
+        "key": "general:snap:monitor_gap",
+        "value": 25
+    },
+    {
+        "key": "decoration:rounding",
+        "value": 10
+    },
+    {
+        "key": "decoration:inactive_opacity",
+        "value": 1.0
+    },
+    {
+        "key": "decoration:shadow:enabled",
+        "value": "true"
+    },
+    {
+        "key": "decoration:shadow:range",
+        "value": 25
+    },
+    {
+        "key": "decoration:blur:enabled",
+        "value": "true"
+    },
+    {
+        "key": "input:numlock_by_default",
+        "value": "true"
+    },
+    {
+        "key": "decoration:blur:size",
+        "value": 3
+    },
+    {
+        "key": "decoration:blur:passes",
+        "value": 3
+    }
+]
