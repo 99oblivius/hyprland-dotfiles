@@ -34,6 +34,11 @@
     background-color: rgb(var(--mention-color) / 0.15) !important;
 }
 
+/* Ephemeral messages */
+[class*="ephemeral"] {
+    background-color: rgb(88 101 242 / 0.15) !important;
+}
+
 /* Channel unread pill */
 [class*="unread"]:not([class*="Mentions"]):not([class*="tutorial"]):not([class*="Pill"]):not([class*="Bar"]):not([class*="Top"]):not([class*="Bottom"]) {
     background-color: var(--indicator-color) !important;
@@ -59,16 +64,18 @@
     background-color: rgb(var(--overlay-color) / 0.8) !important;
 }
 
-/* Filled buttons */
-[class*="lookFilled"][class*="colorGreen"] {
-    background-color: rgb(0 255 100 / 0.25) !important;
+/* Component Buttons */
+[class*="lookFilled"][class*="colorGreen"] { background-color: rgb(0 255 100 / 0.25) !important; }
+[class*="lookFilled"][class*="colorRed"] { background-color: rgb(255 50 50 / 0.25) !important; }
+[class*="lookFilled"][class*="colorBrand"] { background-color: rgb(100 120 255 / 0.25) !important; }
+[class*="lookFilled"][class*="colorPrimary"] { background-color: rgb(150 155 170 / 0.25) !important; }
+
+/* Right click menus */
+[class*="menu"] {
+    background-color: rgb(var(--overlay-color) / 0.8) !important;
 }
-[class*="lookFilled"][class*="colorRed"] {
-    background-color: rgb(255 50 50 / 0.25) !important;
-}
-[class*="lookFilled"][class*="colorBrand"] {
-    background-color: rgb(100 120 255 / 0.25) !important;
-}
-[class*="lookFilled"][class*="colorPrimary"] {
-    background-color: rgb(150 155 170 / 0.25) !important;
+
+/* Hover and reaction menus */
+[class*="ooltip_"] {
+    background-color: rgb(var(--overlay-color) / 0.8) !important;
 }
