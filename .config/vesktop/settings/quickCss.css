@@ -76,6 +76,6 @@
 }
 
 /* Hover and reaction menus */
-[class*="ooltip_"] {
+[class*="ooltip_"]:not([class*="name"] > [class*="Tooltip"]) {
     background-color: rgb(var(--overlay-color) / 0.8) !important;
 }
