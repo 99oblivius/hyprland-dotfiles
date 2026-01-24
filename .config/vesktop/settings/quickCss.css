@@ -1,0 +1,74 @@
+/* Color Palette */
+:root {
+    --overlay-color: 5 0 15;
+    --accent-color: 110 50 150;
+    --mention-color: 244 182 101;
+    --indicator-color: white;
+}
+
+/* Global Transparency */
+*:not([class*="-carouselModal"]):not([class*="-container"]) {
+    background-color: transparent;
+}
+
+/* Theme Background Overrides */
+.custom-theme-background {
+    --custom-theme-background: linear-gradient(rgb(var(--overlay-color) / 0.2), rgb(var(--overlay-color) / 0.2)) !important;
+    --custom-background-gradient-lowest-opacity: 0 !important;
+    --custom-background-gradient-lower-opacity: 0 !important;
+    --custom-background-gradient-low-opacity: 0 !important;
+    --custom-background-gradient-high-opacity: 20% !important;
+    --custom-background-gradient-higher-opacity: 0 !important;
+    --custom-background-gradient-highest-opacity: 20% !important;
+    --custom-background-gradient-opacity-chat: 0 !important;
+    --custom-background-gradient-opacity-app-frame: transparent !important;
+}
+
+/* Spoilers */
+[class*="spoilerContent"], [class*="spoilerText"] {
+    background-color: rgb(var(--overlay-color) / 0.25) !important;
+}
+
+/* Mentions */
+[class*="mentioned"] {
+    background-color: rgb(var(--mention-color) / 0.15) !important;
+}
+
+/* Channel unread pill */
+[class*="unread"]:not([class*="Mentions"]):not([class*="tutorial"]):not([class*="Pill"]):not([class*="Bar"]):not([class*="Top"]):not([class*="Bottom"]) {
+    background-color: var(--indicator-color) !important;
+}
+
+/* Server unread pill */
+[class*="pill_"] > [class*="item_"] {
+    background-color: var(--indicator-color) !important;
+}
+
+/* NEW mentions bar */
+[class*="unreadMentionsBar"] {
+    background-color: rgb(var(--accent-color) / 0.67) !important;
+}
+
+/* Server icon wrapper */
+[class*="childWrapper"] {
+    background-color: rgb(var(--accent-color) / 0.15) !important;
+}
+
+/* Settings/modal background */
+[class*="modalContent"] {
+    background-color: rgb(var(--overlay-color) / 0.8) !important;
+}
+
+/* Filled buttons */
+[class*="lookFilled"][class*="colorGreen"] {
+    background-color: rgb(0 255 100 / 0.25) !important;
+}
+[class*="lookFilled"][class*="colorRed"] {
+    background-color: rgb(255 50 50 / 0.25) !important;
+}
+[class*="lookFilled"][class*="colorBrand"] {
+    background-color: rgb(100 120 255 / 0.25) !important;
+}
+[class*="lookFilled"][class*="colorPrimary"] {
+    background-color: rgb(150 155 170 / 0.25) !important;
+}
