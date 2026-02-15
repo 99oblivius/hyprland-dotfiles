@@ -11,8 +11,8 @@ AOC_AG271QG="AOC AG271QG"
 
 # Get current monitor names by matching descriptions
 get_monitor_name() {
-    local desc="$1"
-    hyprctl monitors -j | jq -r --arg desc "$desc" '.[] | select(.description | startswith($desc)) | .name'
+  local desc="$1"
+  hyprctl monitors -j | jq -r --arg desc "$desc" '.[] | select(.description | startswith($desc)) | .name'
 }
 
 # Get monitor names
@@ -22,7 +22,7 @@ AOC_271_NAME=$(get_monitor_name "$AOC_AG271QG")
 HDMI_NAME=$(hyprctl monitors -j | jq -r '.[] | select(.name | startswith("HDMI")) | .name' | head -1)
 
 # Write monitor configuration
-cat > "$CONFIG_FILE" << EOF
+cat >"$CONFIG_FILE" <<EOF
 # -----------------------------------------------------
 # Monitor Setup
 # name: "Main-Triple"
@@ -33,23 +33,23 @@ EOF
 
 # Dell AW2721D - center, 240Hz
 if [ -n "$DELL_NAME" ]; then
-    echo "monitor=$DELL_NAME,2560x1440@239.97,0x0,1,vrr,1" >> "$CONFIG_FILE"
+  echo "monitor=$DELL_NAME,2560x1440@239.97,0x0,1,vrr,1" >>"$CONFIG_FILE"
 fi
 
 # AOC AG271QG - left (no VRR - causes high power draw on secondary GPU)
 if [ -n "$AOC_271_NAME" ]; then
-    echo "monitor=$AOC_271_NAME,2560x1440@120,-2560x125,1" >> "$CONFIG_FILE"
+  echo "monitor=$AOC_271_NAME,2560x1440@120,-2560x125,1" >>"$CONFIG_FILE"
 fi
 
 # AOC AG241QG4 - top (no VRR - causes high power draw on secondary GPU)
 if [ -n "$AOC_241_NAME" ]; then
-    echo "monitor=$AOC_241_NAME,2560x1440@120,0x-1440,1" >> "$CONFIG_FILE"
+  echo "monitor=$AOC_241_NAME,2560x1440@120,0x-1440,1" >>"$CONFIG_FILE"
 fi
 
 # HDMI monitor (if connected)
-if [ -n "$HDMI_NAME" ]; then
-    echo "monitor=$HDMI_NAME,1920x1080@50,2560x250,1,transform,3" >> "$CONFIG_FILE"
-fi
+# if [ -n "$HDMI_NAME" ]; then
+#     echo "monitor=$HDMI_NAME,1920x1080@50,2560x250,1,transform,3" >> "$CONFIG_FILE"
+# fi
 
 # Reload Hyprland config
 hyprctl reload
