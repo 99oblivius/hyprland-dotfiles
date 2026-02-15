@@ -11,19 +11,18 @@ case "$1" in
         # Freeze screen for region selection
         hyprpicker -r -z &
         pid_picker=$!
-        trap 'kill "$pid_picker" 2>/dev/null' EXIT
         sleep 0.1
 
         # User selects region
-        region=$(slurp -b "#00000080" -c "#888888ff" -w 1) || exit 0
-        [[ -z "$region" ]] && exit 0
+        region=$(slurp -b "#00000080" -c "#888888ff" -w 1) || {
+            kill "$pid_picker" 2>/dev/null
+            exit 0
+        }
+        [[ -z "$region" ]] && { kill "$pid_picker" 2>/dev/null; exit 0; }
 
-        # Unfreeze screen
-        kill "$pid_picker" 2>/dev/null
-        trap - EXIT
-
-        # Capture directly to clipboard
+        # Capture WHILE frozen, THEN unfreeze
         grim -g "$region" - | wl-copy
+        kill "$pid_picker" 2>/dev/null
         notify-send -t 1000 "Screenshot copied to clipboard"
         ;;
 
