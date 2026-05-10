@@ -20,14 +20,23 @@ if [[ ${#WALLPAPERS[@]} -lt ${#MONITORS[@]} ]]; then
     echo "Some monitors will share wallpapers"
 fi
 
+# Pinned wallpapers per monitor (override random selection)
+declare -A PINNED=(
+    ["DP-3"]="$WALLPAPER_DIR/april-sketches.webp"
+)
+
 # Assign unique wallpaper to each monitor
 for i in "${!MONITORS[@]}"; do
     monitor="${MONITORS[$i]}"
-    # Cycle through wallpapers if we run out
-    wallpaper="${WALLPAPERS[$((i % ${#WALLPAPERS[@]}))]}"
+    if [[ -n "${PINNED[$monitor]}" ]]; then
+        wallpaper="${PINNED[$monitor]}"
+    else
+        # Cycle through wallpapers if we run out
+        wallpaper="${WALLPAPERS[$((i % ${#WALLPAPERS[@]}))]}"
+    fi
 
     echo "Setting $monitor -> $(basename "$wallpaper")"
-    swww img -o "$monitor" "$wallpaper" \
+    awww img -o "$monitor" "$wallpaper" \
         --transition-type any \
         --transition-duration 2 \
         --transition-fps 60
